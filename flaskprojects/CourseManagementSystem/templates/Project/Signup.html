@@ -1,0 +1,16 @@
+{% extends 'Project/ProjectNavbar.html' %}
+<html lang="en"><head>
+    <meta charset="UTF-8">    <title>Title</title>
+<!--    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">--></head>
+<body>{% block body %}
+
+<h1>Welcome to Deepak's Flask Framework Project</h1><h1>Signup Page</h1>
+    <form action="/signup" method="post">        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password">Password:</label>        <input type="password" id="password" name="password" required><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="phone_number">Phone Number:</label>        <input type="text" id="phone_number" name="phone_number" required><br>
+        <input type="submit" value="Signup">
+    </form>{% endblock %}
+</body></html>

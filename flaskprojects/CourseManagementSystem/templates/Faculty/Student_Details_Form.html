@@ -1,0 +1,60 @@
+{% extends 'Faculty/FacultyNavbar.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS for centering the card */
+        .center-card {
+            margin: 0 auto;
+            margin-top: 50px;
+            max-width: 500px; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body>
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card center-card">
+                <div class="card-body">
+                    <h2 class="card-title">Welcome to Deepak's CMS - Faculty Homepage</h2>
+                    <h2 class="card-subtitle mb-4">Student Details Form</h2>
+                    <form action="/submit_student" method="post">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div><br>
+                        <div class="form-group">
+                            <label for="age">Age:</label>
+                            <input type="number" id="age" name="age" class="form-control" required>
+                        </div><br>
+                        <div class="form-group">
+                            <label for="phone_number">Phone Number:</label>
+                            <input type="text" id="phone_number" name="phone_number" class="form-control" required>
+                        </div><br>
+                        <div class="form-group">
+                            <label for="aadhar_number">Aadhar Number:</label>
+                            <input type="text" id="aadhar_number" name="aadhar_number" class="form-control" required>
+                        </div><br>
+                        <div class="form-group">
+                            <label for="email_id">Email ID:</label>
+                            <input type="email" id="email_id" name="email_id" class="form-control" required>
+                        </div><br>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+<!-- Bootstrap JS scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

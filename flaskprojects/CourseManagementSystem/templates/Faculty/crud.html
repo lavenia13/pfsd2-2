@@ -1,0 +1,45 @@
+{% extends 'Faculty/FacultyNavbar.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <style>
+        .card {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+{% block body %}
+
+
+<h1>Welcome to Deepak's Flask Framework - Project Homepage</h1>
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Insert</h5>
+                        <p class="card-text">Perform create operation here.</p>
+                        <a href="{{ url_for('student_form') }}" class="btn btn-primary">Click to Insert</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Display</h5>
+                        <p class="card-text">Perform read operation here.</p>
+                        <a href="{{ url_for('view_students') }}" class="btn btn-primary">Click to Display</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+{% endblock %}
+</body>
+</html>

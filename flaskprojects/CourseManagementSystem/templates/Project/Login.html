@@ -1,0 +1,16 @@
+{% extends 'Project/ProjectNavbar.html' %}<html lang="en">
+<head>    <meta charset="UTF-8">
+    <title>Title</title></head>
+<body>{% block body %}
+
+<h1>Welcome to Deepak's Flask Framework - Project Homepage</h1>
+<h1>Login Page</h1>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>    {% endif %}
+    <form action="/loginlogic" method="post">
+        <label for="username">Username:</label>        <input type="text" id="username" name="username" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <input type="submit" value="Login">    </form>
+{% endblock %}
+</body></html>

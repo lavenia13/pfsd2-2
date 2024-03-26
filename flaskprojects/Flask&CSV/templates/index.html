@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Data</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Employee Data</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>EMPID</th>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Department</th>
+                    <th>Designation</th>
+                    <th>No of Years Experience</th>
+                    <th>No of Leaves Applied</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    <td>{{ row['EMPID'] }}</td>
+                    <td>{{ row['Name'] }}</td>
+                    <td>{{ row['DOB'] }}</td>
+                    <td>{{ row['Department'] }}</td>
+                    <td>{{ row['Designation'] }}</td>
+                    <td>{{ row['No of Years Experience'] }}</td>
+                    <td>{{ row['No of leaves applied'] }}</td>
+                    <td>{{ row['Salary'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <hr>
+        <h2>Add New Employee</h2>
+        <form method="post" action="/add">
+            <div class="form-group">
+                <label for="empid">EMPID</label>
+                <input type="text" class="form-control" id="empid" name="empid" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">DOB</label>
+                <input type="date" class="form-control" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="department">Department</label>
+                <input type="text" class="form-control" id="department" name="department" required>
+            </div>
+            <div class="form-group">
+                <label for="designation">Designation</label>
+                <input type="text" class="form-control" id="designation" name="designation" required>
+            </div>
+            <div class="form-group">
+                <label for="experience">No of Years Experience</label>
+                <input type="number" class="form-control" id="experience" name="experience" required>
+            </div>
+            <div class="form-group">
+                <label for="leaves_applied">No of Leaves Applied</label>
+                <input type="number" class="form-control" id="leaves_applied" name="leaves_applied" required>
+            </div>
+            <div class="form-group">
+                <label for="salary">Salary</label>
+                <input type="number" class="form-control" id="salary" name="salary" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

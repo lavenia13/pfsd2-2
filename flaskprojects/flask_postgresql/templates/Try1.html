@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet" >
+  </head>
+<body>
+<div class="card text-center">
+<div class="card card-body" style="width: 20rem" >
+        <form action="{{url_for('add_student')}}" method="POST">
+          <div class="form-group">
+            <input type="number" class="form-control" name="regnum" placeholder="REGNUM">
+          </div>
+<br>
+          <div class="form-group">
+            <input type="text" class="form-control" name="name" placeholder="Name">
+          </div>
+<br>
+          <div class="form-group">
+            <input type="text" class="form-control" name="subject1" placeholder="SUBJECT NAME">
+          </div>
+<br>
+                      <div class="form-group">
+            <input type="text" class="form-control" name="subject2" placeholder="SUBJECT NAME">
+          </div>
+            <BR>
+          <button class="btn btn-primary btn-block">
+            Save
+          </button>
+        </form>
+
+      </div>
+    </div>
+</div>
+{% if students %}    <div class="card text-center mt-4">
+        <div class="card card-body">
+            <h3>Student List:</h3>
+            <ul class="list-group">
+                {% for student in students %}
+                    <li class="list-group-item">
+                        REGNUM: {{ student[0] }}, Name: {{ student[1] }}, Subject1: {{ student[2] }}, Subject2: {{ student[3] }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endif %}
+</body>
+</html>

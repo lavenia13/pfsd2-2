@@ -1,0 +1,46 @@
+{%extends 'navbar.html' %}
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col order-last">
+      First in DOM, ordered last
+      <div>
+  <form method ="post" action="{%url 'weatherlogic' %}">
+      {% csrf_token %}
+      <br>
+      <h4>
+          <label>Enter a city Name:</label>
+          <input type="text" name="place">
+          <br><br>
+          <button type="submit" class="btn btn-success btn-lg"> check the current weather</button>
+      </h4>
+  </form>
+</div>
+    </div>
+    <div class="col">
+      <h1>Top vacation Destinations</h1>
+        <br><br>
+        <h1>
+             {%if error_message %}
+      <p>{{error_message}}</p>
+   {%else %}
+            <p>City: {{city }}</p>
+            <p>Temperature:{{ temperature1 }} &#8451;</p>
+            <p>Humidity:{{ humidity }}%</p>
+   {% endif %}
+        </h1>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+</body>
+</html>

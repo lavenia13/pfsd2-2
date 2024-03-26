@@ -1,0 +1,38 @@
+{% extends 'Faculty/FacultyNavbar.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+
+
+<h1>Welcome to Deepak's Flask Framework - Faculty Homepage</h1>
+
+<div class="container">
+        <h1 class="mt-4">All Students</h1>
+        <div class="row">
+            {% for student in students %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ student[0] }}</h5>
+                        <p class="card-text">Age: {{ student[1] }}</p>
+                        <p class="card-text">Phone Number: {{ student[2] }}</p>
+                        <p class="card-text">Aadhar Number: {{ student[3] }}</p>
+                        <p class="card-text">Email ID: {{ student[4] }}</p>
+                        <a href="{{ url_for('student_update', student_id=student[0]) }}" class="btn btn-primary mr-2">Update</a>
+                        <form action="{{ url_for('delete_student', student_id=student[0]) }}" method="post" style="display: inline;">
+                            <input type="hidden" name="student_id" value="{{ student[0] }}">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>
